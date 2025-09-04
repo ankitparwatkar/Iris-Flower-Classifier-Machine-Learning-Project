@@ -199,8 +199,7 @@ st.markdown("""
 
 # ================== Load Model ==================
 try:
-    with open("iris_model.pkl", "rb") as f:
-        model = pickle.load(f)
+    model = pickle.load(open('iris_model.pkl', 'rb'))
     model_accuracy = 1.0
 except:
     st.error("Model file not found. Please ensure 'iris_model.pkl' is in the same directory.")
@@ -285,4 +284,5 @@ st.markdown(f"""
 <div class="footer">
 🚀 Model Accuracy: {model_accuracy*100:.2f}% | Built with ❤️ by Ankit Parwatkar
 </div>
+
 """, unsafe_allow_html=True)
